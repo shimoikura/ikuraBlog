@@ -29,6 +29,6 @@ production:
  database: d7aenfdf2fbam9
  username: eqtsowotvgybwk
  password: RVPHh6iABgZlemWnaJkw3bWIz6
- # adapter: postgresql
- # encoding: unicode
- # pool: 5
+ adapter: postgresql
+ encoding: unicode
+ pool: 5
