@@ -1,6 +1,5 @@
 <h1>ikura Blog</h1>
 
-<h2>新しい投稿</h2>
 <%= form_for :blog, url: blogs_path do |f| %>
   <p>
     <%= f.label :body, "投稿内容" %><br>
@@ -13,10 +12,18 @@
 
 
 <h3>全ての投稿一覧</h3>
-<table>
+<hr>
+<ul id="blogs">
   <% @blogs.each do |blog| %>
-    <tr><td><%=  link_to blog.body ,blog, target: "_blank" %></td></tr>
-    <tr><td><%= link_to "いいね", like_path(blog.id),method: :post %><%= blog.like %></td></tr>
-
+    <li class="blog">
+      <p>
+        <span><%= blog.id %></span>
+        <span class="body"><%=  link_to blog.body ,blog, target: "_blank" %></span>
+      </p>
+      <p class="meta">
+        <span class="like"><%= link_to "いいね:", like_path(blog.id),method: :post %> <%= blog.like %>| </span>
+        <span class="pst-date">投稿日時： <%= blog.created_at.strftime('%Y年%m月%d日 %H:%M:%S') %></span>
+      </p>
+    </li>
   <% end %>
-</table>
+</ul>
