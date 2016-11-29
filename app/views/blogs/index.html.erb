@@ -16,21 +16,7 @@
 <table>
   <% @blogs.each do |blog| %>
     <tr><td><%=  link_to blog.body ,blog, target: "_blank" %></td></tr>
-    <tr><td><button onclick="countup()">いいね<%= blog.like %></button></td></tr>
-    <script type="text/javascript">
-    function countup(){
-      TARGET.countup();
-    }
-    var TARGET = document.getElementById( "<%= blog.like %>" );
-    $(document).ready(function() {
-    $(".js").click(function() {
-    $.ajax({
-       url: '/increment.json',
-       data: { id : "<%= blog.like %>" },
-       async: false
-   });
-   });
-   });
-    </script>
+    <tr><td><%= link_to "いいね", like_path(blog.id),method: :post %><%= blog.like %></td></tr>
+
   <% end %>
 </table>
