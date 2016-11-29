@@ -3,7 +3,7 @@ class RepliesController < ApplicationController
    @blog = Blog.find(params[:blog_id])
    @reply = @blog.replies.create(reply_params)
 
-   redirect_to blogs_path(@blog)
+   redirect_to :back
  end
 
  private

@@ -3,14 +3,17 @@
 <div class="blog-detail">
   <%= form_for( [@blog, @blog.replies.build] ) do |f| %>
   <p>
+    <span><%= @blog.id %>: </span>
+    <span class="pst-date">投稿日時： <%= @blog.created_at.strftime('%Y年%m月%d日 %H:%M:%S') %> | </span>
+    <span class="like"><%= link_to "いいね", like_path(@blog.id),method: :post %> :<%= @blog.like %></span>
+  </p>
+  <p class="body">
     <strong><%= @blog.body %></strong>
-
   </p>
   <p>
     <%= f.label :comment %><br />
     <%= f.text_area :comment, cols: 60, rows: 4 %>
   </p>
-
   <p>
     <%= f.submit %>
   </p>

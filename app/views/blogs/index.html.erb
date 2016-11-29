@@ -17,11 +17,11 @@
   <% @blogs.each do |blog| %>
     <li class="blog">
       <p>
-        <span><%= blog.id %></span>
+        <span><%= blog.id %>: </span>
         <span class="body"><%=  link_to blog.body ,blog, target: "_blank" %></span>
       </p>
       <p class="meta">
-        <span class="like"><%= link_to "いいね:", like_path(blog.id),method: :post %> <%= blog.like %>| </span>
+        <span class="like"><%= link_to "いいね", like_path(blog.id),method: :post %>: <%= blog.like %> | </span>
         <span class="pst-date">投稿日時： <%= blog.created_at.strftime('%Y年%m月%d日 %H:%M:%S') %></span>
       </p>
     </li>
