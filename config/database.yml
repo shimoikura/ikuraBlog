@@ -30,5 +30,5 @@ production:
  username: eqtsowotvgybwk
  password: RVPHh6iABgZlemWnaJkw3bWIz6
  adapter: postgresql
- encoding: unicode
- pool: 5
+ host: ec2-54-83-47-145.compute-1.amazonaws.com
+ port: 5432
