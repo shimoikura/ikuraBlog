@@ -26,9 +26,9 @@ test:
 
 production:
  <<: *default
- database: d3hlrfuc0n7l3o
- username: plojkmnmxayoke
- password: rSW8BegGcXsJ-SDRljtqV1m8o9
- # adapter: postgresql
- # encoding: unicode
- # pool: 5
+ # database: d3hlrfuc0n7l3o
+ # username: plojkmnmxayoke
+ # password: rSW8BegGcXsJ-SDRljtqV1m8o9
+ adapter: postgresql
+ encoding: unicode
+ pool: 5
