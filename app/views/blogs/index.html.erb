@@ -11,15 +11,26 @@
   </p>
 <% end %>
 
+
 <h3>全ての投稿一覧</h3>
 <table>
   <% @blogs.each do |blog| %>
     <tr><td><%=  link_to blog.body ,blog, target: "_blank" %></td></tr>
-    <tr><button id="like-buttons" onclick="countup()">いいね<%= blog.like %></button></tr>
+    <tr><td><button onclick="countup()">いいね<%= blog.like %></button></td></tr>
     <script type="text/javascript">
     function countup(){
-      document.getElementById( "like-buttons" ).innerHTML = ++ <%= blog.like %>
+      TARGET.countup();
     }
+    var TARGET = document.getElementById( "<%= blog.like %>" );
+    $(document).ready(function() {
+    $(".js").click(function() {
+    $.ajax({
+       url: '/increment.json',
+       data: { id : "<%= blog.like %>" },
+       async: false
+   });
+   });
+   });
     </script>
   <% end %>
 </table>
