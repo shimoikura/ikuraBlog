@@ -1,0 +1,25 @@
+<p>
+  <strong>投稿内容：</strong>
+  <%= @blog.body %>
+</p>
+
+<% @blog.replies.each do |reply| %>
+  <p>
+    <strong>コメント：</strong>
+    <%= reply.comment %>
+  </p>
+<% end %>
+
+<h1>コメントを追加</h1>
+<%= form_for( [@blog, @blog.replies.build] ) do |f| %>
+  <p>
+    <%= f.label :comment %><br />
+    <%= f.text_area :comment, cols: 60, rows: 4 %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to '戻る', blogs_path %>
