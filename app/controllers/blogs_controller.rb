@@ -6,7 +6,7 @@ class BlogsController < ApplicationController
   def create
      @blog = Blog.new(blog_params)
      @blog.save
-     redirect_to @blog
+     redirect_to :back
   end
   def show
     @blog = Blog.find(params[:id])
