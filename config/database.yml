@@ -19,7 +19,16 @@ development:
 test:
   <<: *default
   database: db/test.sqlite3
+#
+# production:
+#   <<: *default
+#   database: db/production.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+ <<: *default
+ database: d3hlrfuc0n7l3o
+ username: plojkmnmxayoke
+ password: rSW8BegGcXsJ-SDRljtqV1m8o9
+ # adapter: postgresql
+ # encoding: unicode
+ # pool: 5
