@@ -19,7 +19,16 @@ development:
 test:
   <<: *default
   database: db/test.sqlite3
+#
+# production:
+#   <<: *default
+#   database: db/production.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+ <<: *default
+ database: d7aenfdf2fbam9
+ username: eqtsowotvgybwk
+ password: RVPHh6iABgZlemWnaJkw3bWIz6
+ adapter: postgresql
+ host: ec2-54-83-47-145.compute-1.amazonaws.com
+ port: 5432
